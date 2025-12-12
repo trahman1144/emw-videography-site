@@ -37,7 +37,7 @@ export default function PortfolioPage() {
 
         // Determine section title and subtitle based on category
         let sectionTitle: string = category.title
-        let sectionSubtitle = category.description
+        let sectionSubtitle: string = category.description
 
         if (category.id === 'music') {
           sectionTitle = 'Creative Showreel'
