@@ -44,8 +44,7 @@ export default function AboutPage() {
                   story that resonates with your audience.
                 </p>
                 <p>
-                  Based in London, the heart of the UK's creative industry, I work with clients 
-                  across the UK and worldwide to bring their visions to life through the power of video.
+                  {"Based in London, the heart of the UK's creative industry, I work with clients across the UK and worldwide to bring their visions to life through the power of video."}
                 </p>
               </div>
             </div>
@@ -150,9 +149,7 @@ export default function AboutPage() {
             My Philosophy
           </h2>
           <blockquote className="text-xl lg:text-2xl text-emw-white/90 italic leading-relaxed mb-8">
-            "Every moment has a story worth telling. My mission is to capture those stories 
-            with authenticity, creativity, and technical excellence, creating videos that 
-            not only document events but celebrate the human experience."
+            {`"Every moment has a story worth telling. My mission is to capture those stories with authenticity, creativity, and technical excellence, creating videos that not only document events but celebrate the human experience."`}
           </blockquote>
           <p className="text-lg text-emw-white/80">
             — Euan Michael Wattley

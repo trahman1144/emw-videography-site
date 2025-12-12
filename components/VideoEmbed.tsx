@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface VideoEmbedProps {
   url?: string
@@ -81,11 +82,15 @@ export default function VideoEmbed({ url, src, title, thumbnail, className = '' 
     <div className={`relative aspect-video bg-emw-black rounded-xl overflow-hidden ${className}`}>
       {!isLoaded && thumbnail && (
         <div className="absolute inset-0 flex items-center justify-center bg-emw-soft-green/20">
-          <img
-            src={thumbnail}
-            alt={title}
-            className="w-full h-full object-cover"
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src={thumbnail}
+              alt={title}
+              fill
+              className="object-cover"
+              unoptimized
+            />
+          </div>
           <button
             onClick={() => setIsLoaded(true)}
             className="absolute inset-0 flex items-center justify-center bg-black/50 hover:bg-black/30 transition-colors duration-300"
