@@ -11,7 +11,7 @@ interface ServiceCardProps {
     id: string
     title: string
     description: string
-    features: string[]
+    features: readonly string[]
     icon: IconName
   }
 }
