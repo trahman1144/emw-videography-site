@@ -164,11 +164,10 @@ export default function AboutPage() {
       <Section>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-6">
-            Let's Work Together
+            {"Let's Work Together"}
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">
-            Ready to bring your vision to life? I'd love to hear about your project and 
-            discuss how we can create something truly special together.
+            {"Ready to bring your vision to life? I'd love to hear about your project and discuss how we can create something truly special together."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/consultation" className="btn-primary">

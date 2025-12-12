@@ -36,7 +36,7 @@ export default function PortfolioPage() {
                              null
 
         // Determine section title and subtitle based on category
-        let sectionTitle = category.title
+        let sectionTitle: string = category.title
         let sectionSubtitle = category.description
 
         if (category.id === 'music') {
@@ -187,7 +187,7 @@ export default function PortfolioPage() {
             Ready to Create Your Story?
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">
-            Let's discuss your project and bring your vision to life with professional videography services.
+            {"Let's discuss your project and bring your vision to life with professional videography services."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/consultation" className="btn-primary">

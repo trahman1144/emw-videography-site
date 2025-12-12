@@ -275,7 +275,7 @@ export default function ServicesPage() {
             Ready to Get Started?
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">
-            Let's discuss your project and create something truly special together.
+            {"Let's discuss your project and create something truly special together."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/consultation" className="btn-primary">

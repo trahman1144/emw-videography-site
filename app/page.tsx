@@ -99,7 +99,7 @@ export default function HomePage() {
             Ready to Create Something Amazing?
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">
-            Let's discuss your project and bring your vision to life with professional videography services.
+            {"Let's discuss your project and bring your vision to life with professional videography services."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/consultation" className="btn-primary">

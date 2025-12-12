@@ -21,8 +21,7 @@ export default function TestimonialsPage() {
             What my clients say about me
           </p>
           <p className="text-lg text-emw-white/80 max-w-2xl mx-auto">
-            Don't just take my word for it. Here's what my clients have to say about 
-            their experience working with me.
+            {"Don't just take my word for it. Here's what my clients have to say about their experience working with me."}
           </p>
         </div>
       </Section>
@@ -49,7 +48,7 @@ export default function TestimonialsPage() {
                   ))}
                 </div>
                 <blockquote className="text-emw-white/90 italic mb-6 leading-relaxed">
-                  "{testimonial.content}"
+                  {`"${testimonial.content}"`}
                 </blockquote>
                 <div className="border-t border-emw-soft-green/20 pt-4">
                   <div className="font-semibold text-emw-white">
@@ -125,7 +124,7 @@ export default function TestimonialsPage() {
                       ))}
                     </div>
                     <blockquote className="text-emw-white/90 italic mb-4 leading-relaxed text-lg">
-                      "{testimonial.content}"
+                      {`"${testimonial.content}"`}
                     </blockquote>
                     <div className="flex justify-between items-center">
                       <div>
@@ -193,7 +192,7 @@ export default function TestimonialsPage() {
             Ready to Join My Happy Clients?
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">
-            Let's create something amazing together. Book a consultation to discuss your project.
+            {"Let's create something amazing together. Book a consultation to discuss your project."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/consultation" className="btn-primary">

@@ -20,7 +20,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-xl text-emw-soft-green mb-8">
-            Let's create something amazing together
+            {"Let's create something amazing together"}
           </p>
           <p className="text-lg text-emw-white/80 max-w-2xl mx-auto">
             Ready to bring your vision to life? Get in touch with us to discuss your project 
@@ -249,7 +249,7 @@ export default function ContactPage() {
             Ready to Get Started?
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">
-            Let's discuss your project and create something truly special together.
+            {"Let's discuss your project and create something truly special together."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/consultation" className="btn-primary">
