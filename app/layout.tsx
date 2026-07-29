@@ -21,6 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://emw-videography-site.vercel.app'),
   title: 'Euan Michael Wattley Videography | Voir le Monde',
   description:
     'Professional videography services for weddings, corporate events, music videos, and more. Cinematic storytelling that captures your vision.',

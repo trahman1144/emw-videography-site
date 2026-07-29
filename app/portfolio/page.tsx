@@ -119,6 +119,7 @@ export default function PortfolioPage() {
                     </div>
                   </div>
                   {project.thumbnail ? (
+                    // eslint-disable-next-line @next/next/no-img-element
                     <img 
                       src={project.thumbnail} 
                       alt={project.title}

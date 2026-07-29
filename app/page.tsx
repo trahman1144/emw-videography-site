@@ -343,6 +343,7 @@ export default function HomePage() {
                         </svg>
                       </div>
                     ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={project.thumbnail}
                         alt={`${project.title} thumbnail`}

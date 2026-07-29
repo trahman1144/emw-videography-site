@@ -64,7 +64,7 @@ export default function TestimonialsPage() {
             Testimonials
           </h1>
           <p className="font-mono-code text-white/50 text-sm max-w-xl">
-            Real words from real clients — here's what it's like to work together.
+            Real words from real clients — here&apos;s what it&apos;s like to work together.
           </p>
         </div>
       </section>
@@ -96,7 +96,7 @@ export default function TestimonialsPage() {
         <div className="flex flex-col">
           {testimonials.map((testimonial, idx) => (
             <div key={idx} className="border-b border-white/10 py-10 lg:py-12 flex flex-col">
-              <div className="text-6xl text-[#0D4D37]/30 font-serif leading-none mb-4">"</div>
+              <div className="text-6xl text-[#0D4D37]/30 font-serif leading-none mb-4">&ldquo;</div>
               <p className="font-jakarta italic text-xl lg:text-2xl text-white/85 leading-relaxed max-w-3xl mb-8">
                 {testimonial.content}
               </p>
