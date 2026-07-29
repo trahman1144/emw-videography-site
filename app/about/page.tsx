@@ -51,7 +51,7 @@ export default function AboutPage() {
                 regardless of scale.
               </p>
               <p>
-                Based in London — the heart of the UK's creative industry — I work
+                Based in London — the heart of the UK&apos;s creative industry — I work
                 with clients across the UK, Europe, and worldwide.
               </p>
             </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
       <section className="w-full border-t border-b border-white/10 py-20  bg-emw-black">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <blockquote className="font-jakarta text-2xl lg:text-4xl text-white/80 italic leading-relaxed">
-            "Every moment has a story worth telling. My mission is to capture those stories with authenticity, creativity, and technical excellence."
+            &ldquo;Every moment has a story worth telling. My mission is to capture those stories with authenticity, creativity, and technical excellence.&rdquo;
           </blockquote>
           <p className="font-mono-code text-sm text-white/30 tracking-widest mt-6">
             — Euan Michael Wattley
@@ -157,9 +157,10 @@ export default function AboutPage() {
       {/* BOTTOM CTA */}
       <section className="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center text-center ">
         <span className="font-mono-code text-[11px] tracking-[0.28em] text-emw-deep-green uppercase mb-4 block">
-          Let's Collaborate
+          Let&apos;s Collaborate
         </span>
-        <h2 className="font-jakarta font-extrabold text-5xl lg:text-7xl text-white leading-[1.0] mb-12" dangerouslySetInnerHTML={{__html: "Let's Work<br/>Together."}}>
+        <h2 className="font-jakarta font-extrabold text-5xl lg:text-7xl text-white leading-[1.0] mb-12">
+          Let&apos;s Work<br />Together.
         </h2>
         
         <Link

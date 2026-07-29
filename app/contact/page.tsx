@@ -18,7 +18,7 @@ export default function ContactPage() {
             GET IN TOUCH
           </span>
           <h1 className="font-jakarta font-extrabold text-[clamp(3rem,9vw,7rem)] text-white leading-[0.88] tracking-tighter">
-            Let's Build<br />
+            Let&apos;s Build<br />
             Something <span className="text-emw-deep-green">Cinematic.</span>
           </h1>
         </div>
@@ -132,7 +132,7 @@ export default function ContactPage() {
 
           <details className="border-b border-white/10 group">
             <summary className="cursor-pointer py-5 flex items-center justify-between font-jakarta font-semibold text-lg text-white list-none [&::-webkit-details-marker]:hidden">
-              What's included in your packages?
+              What&apos;s included in your packages?
               <span className="text-white/30 group-open:rotate-45 transition-transform duration-300">+</span>
             </summary>
             <div className="pb-6 text-white/55 text-sm leading-relaxed">

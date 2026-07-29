@@ -616,7 +616,7 @@ export default function HomePage() {
           <div className="reveal-base">
 
             <p className="font-mono-code text-[11px] tracking-[0.35em] text-white/20 uppercase mb-10">
-              Let's Collaborate
+              Let&apos;s Collaborate
             </p>
 
             <h2 className="font-jakarta font-extrabold text-[clamp(2.8rem,8vw,7.5rem)] text-white leading-[0.88] tracking-tighter mb-16">
@@ -624,7 +624,7 @@ export default function HomePage() {
               <br />
               to tell?
               <br />
-              <em className="text-emw-deep-green not-italic">Let's build it.</em>
+              <em className="text-emw-deep-green not-italic">Let&apos;s build it.</em>
             </h2>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">

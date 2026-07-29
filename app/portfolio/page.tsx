@@ -76,9 +76,9 @@ export default function PortfolioPage() {
       </section>
 
       {/* FILTER BAR */}
-      <div className="sticky top-14 z-40 bg-[#0B0D0F]/90 backdrop-blur border-b border-white/10 reveal-base">
+      <div className="sticky top-14 z-40 bg-[#0B0D0F]/90 backdrop-blur border-b border-white/10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center gap-8 overflow-x-auto no-scrollbar py-4">
+          <div className="flex items-center gap-8 py-4">
             {FILTERS.map(f => (
               <button
                 key={f}
