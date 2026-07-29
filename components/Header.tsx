@@ -6,64 +6,64 @@ import EmwLogo from './EmwLogo'
 import MobileMenu from './MobileMenu'
 
 const NAV_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/portfolio', label: 'Work' },
-  { href: '/services', label: 'Services' },
-  { href: '/about', label: 'About' },
-  { href: '/testimonials', label: 'Testimonials' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/portfolio', label: 'WORK', index: '01' },
+  { href: '/services', label: 'SERVICES', index: '02' },
+  { href: '/about', label: 'ABOUT', index: '03' },
+  { href: '/testimonials', label: 'TESTIMONIALS', index: '04' },
+  { href: '/contact', label: 'CONTACT', index: '05' },
 ]
 
 export default function Header() {
   const pathname = usePathname()
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-[rgba(11,14,12,.80)] backdrop-blur">
-      <div className="mx-auto max-w-7xl h-14 px-6 lg:px-12 flex items-center justify-between relative">
+    <header className="fixed top-0 inset-x-0 z-50 bg-black/30 backdrop-blur-md border-b border-white/10 py-4 px-6 md:px-12">
+      <div className="mx-auto max-w-7xl flex items-center justify-between relative">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-          <EmwLogo size={28} />
+        {/* Rotating EMW Logo Mark (Preserved as Core Brand Element) */}
+        <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
+          <EmwLogo size={32} />
           <span className="sr-only">Euan Michael Wattley Videography</span>
         </Link>
 
-        {/* Desktop nav */}
+        {/* High-tracking Monospace Nav Links */}
         <nav
-          className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2"
+          className="hidden md:flex items-center gap-8 font-mono text-xs tracking-[0.2em]"
           aria-label="Main navigation"
         >
-          {NAV_LINKS.map(({ href, label }) => {
+          {NAV_LINKS.map(({ href, label, index }) => {
             const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
             return (
               <Link
                 key={href}
                 href={href}
-                className={`nav-link inline-flex items-center px-3 py-1 text-sm font-medium tracking-wide transition-colors duration-150
-                  ${isActive ? 'text-white' : 'text-white/55 hover:text-white'}`}
+                className={`transition-colors duration-200 flex items-center gap-1.5 ${
+                  isActive ? 'text-white font-medium' : 'text-zinc-400 hover:text-white'
+                }`}
                 aria-current={isActive ? 'page' : undefined}
               >
-                {label}
-                {/* Active dot */}
-                {isActive && (
-                  <span className="ml-1.5 w-1 h-1 rounded-full bg-emw-deep-green inline-block" />
-                )}
+                <span className="text-emerald-500/80 text-[10px]">{index} /</span>
+                <span>{label}</span>
               </Link>
             )
           })}
         </nav>
 
-        {/* Right side: Inquire CTA + mobile menu */}
-        <div className="flex items-center gap-3">
+        {/* Right Call To Action & Mobile Trigger */}
+        <div className="flex items-center gap-4">
           <Link
             href="/consultation"
-            className="hidden md:inline-flex items-center gap-2 font-jakarta text-xs font-semibold tracking-wide border border-white/20 hover:border-white/50 text-white/70 hover:text-white px-4 py-1.5 transition-all duration-200"
+            className="hidden md:inline-flex items-center gap-2.5 border border-white/20 hover:bg-white hover:text-black transition-all px-4 py-2 text-xs font-mono tracking-widest text-white uppercase group"
           >
-            Inquire
+            <span className="w-2 h-2 rounded-full animate-pulse bg-emerald-500 flex-shrink-0 group-hover:bg-emerald-600" />
+            <span>AVAILABLE FOR BOOKING</span>
           </Link>
+
           <div className="md:hidden">
             <MobileMenu />
           </div>
         </div>
+
       </div>
     </header>
   )
