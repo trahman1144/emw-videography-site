@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,11 +33,17 @@ body {
 
 @layer base {
   html {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
   }
   
   body {
     @apply bg-emw-black text-emw-white;
+    font-weight: 400;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
   }
   
   * {
@@ -74,6 +80,120 @@ body {
   .form-control {
     @apply w-full px-4 py-3 bg-emw-black border border-white/20 rounded-xl text-emw-white placeholder-emw-white/50 font-medium text-[15px] focus:outline-none focus:border-white/40 focus:ring-4 focus:ring-emw-deep-green/35 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200;
   }
+  
+  /* Hero Background Video Styles */
+  .hero-section {
+    position: relative;
+    isolation: isolate;
+  }
+  
+  .hero-video-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    filter: brightness(0.4) contrast(0.9);
+    will-change: transform;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(11, 14, 12, 0.7) 0%,
+      rgba(11, 14, 12, 0.5) 50%,
+      rgba(11, 14, 12, 0.8) 100%
+    );
+    z-index: 1;
+  }
+  
+  .hero-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      rgba(11, 14, 12, 0.3) 70%,
+      rgba(11, 14, 12, 0.6) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .hero-grain {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.15;
+    z-index: 3;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+  
+  .hero-fallback {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(11, 14, 12, 1) 0%,
+      rgba(18, 63, 47, 0.3) 50%,
+      rgba(11, 14, 12, 1) 100%
+    );
+    z-index: 0;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .hero-video {
+      filter: brightness(0.3) contrast(0.85);
+      opacity: 0.6;
+    }
+    
+    .hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(11, 14, 12, 0.85) 0%,
+        rgba(11, 14, 12, 0.75) 50%,
+        rgba(11, 14, 12, 0.9) 100%
+      );
+    }
+    
+    .hero-grain {
+      opacity: 0.1;
+    }
+  }
+  
+  /* Disable video animation for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-video {
+      display: none;
+    }
+    
+    .hero-fallback {
+      z-index: 1;
+    }
+  }
 }
 
 @layer utilities {
@@ -87,54 +207,149 @@ body {
   }
 }
 
-/* EMW Monogram CSS Animation */
-.emw {
+/* EMW Logo Animation - Premium rotation with pulse effects */
+.emw-logo-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   position: relative;
-  width: 32px;
-  height: 32px;
-  display: inline-block;
+  flex-shrink: 0;
 }
 
-.emw > span {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  color: #0d4d37;
-  opacity: 0;
-  animation: emwCycle 6s linear infinite;
+.emw-logo-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  animation: emwLogoRotate 5s ease-in-out infinite;
+  will-change: transform;
+  flex-shrink: 0;
 }
 
-.emw > span:nth-child(1) {
-  animation-delay: 1s;
+.emw-logo-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #0D4D37;
+  border-radius: 50%;
+  animation: emwLogoDotPulse 5s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
-.emw > span:nth-child(2) {
-  animation-delay: 3s;
+.emw-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  display: block;
 }
 
-.emw > span:nth-child(3) {
-  animation-delay: 5s;
-}
-
-@keyframes emwCycle {
-  0% {
-    opacity: 0;
+@media (prefers-reduced-motion: reduce) {
+  .emw-logo-wrapper {
+    animation: none;
+    transform: rotate(0deg);
   }
-  2% {
+  
+  .emw-logo-dot {
+    animation: none;
     opacity: 1;
   }
-  33.33% {
+}
+
+@keyframes emwLogoRotate {
+  /* E state at 0deg - hold (25% of cycle) */
+  0%, 25% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 0 rgba(13, 77, 55, 0));
+  }
+  /* Subtle pulse before rotation to M */
+  26%, 28% {
+    transform: rotate(0deg) scale(1.06);
+    filter: drop-shadow(0 0 6px rgba(13, 77, 55, 0.35));
+  }
+  /* Smooth rotation to M at 90deg */
+  29%, 31% {
+    transform: rotate(90deg) scale(1.06);
+    filter: drop-shadow(0 0 6px rgba(13, 77, 55, 0.35));
+  }
+  /* Settle at M state - hold (25% of cycle) */
+  32%, 57% {
+    transform: rotate(90deg) scale(1);
+    filter: drop-shadow(0 0 0 rgba(13, 77, 55, 0));
+  }
+  /* Subtle pulse before rotation to W */
+  58%, 60% {
+    transform: rotate(90deg) scale(1.06);
+    filter: drop-shadow(0 0 6px rgba(13, 77, 55, 0.35));
+  }
+  /* Smooth rotation to W at 270deg (180deg clockwise from 90deg) */
+  61%, 63% {
+    transform: rotate(270deg) scale(1.06);
+    filter: drop-shadow(0 0 6px rgba(13, 77, 55, 0.35));
+  }
+  /* Settle at W state - hold (25% of cycle) */
+  64%, 89% {
+    transform: rotate(270deg) scale(1);
+    filter: drop-shadow(0 0 0 rgba(13, 77, 55, 0));
+  }
+  /* Subtle pulse before rotation back to E */
+  90%, 92% {
+    transform: rotate(270deg) scale(1.06);
+    filter: drop-shadow(0 0 6px rgba(13, 77, 55, 0.35));
+  }
+  /* Smooth rotation back to E at 0deg (90deg clockwise from 270deg) */
+  93%, 95% {
+    transform: rotate(0deg) scale(1.06);
+    filter: drop-shadow(0 0 6px rgba(13, 77, 55, 0.35));
+  }
+  /* Settle back to E state */
+  96%, 100% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 0 rgba(13, 77, 55, 0));
+  }
+}
+
+@keyframes emwLogoDotPulse {
+  /* E state - visible */
+  0%, 25% {
     opacity: 1;
   }
-  35% {
-    opacity: 0;
+  /* Fade out before rotation to M (in sync with logo pulse) */
+  26%, 28% {
+    opacity: 0.3;
   }
-  100% {
-    opacity: 0;
+  /* Fade in during rotation to M */
+  29%, 31% {
+    opacity: 0.7;
+  }
+  /* M state - visible */
+  32%, 57% {
+    opacity: 1;
+  }
+  /* Fade out before rotation to W (in sync with logo pulse) */
+  58%, 60% {
+    opacity: 0.3;
+  }
+  /* Fade in during rotation to W */
+  61%, 63% {
+    opacity: 0.7;
+  }
+  /* W state - visible */
+  64%, 89% {
+    opacity: 1;
+  }
+  /* Fade out before rotation back to E (in sync with logo pulse) */
+  90%, 92% {
+    opacity: 0.3;
+  }
+  /* Fade in during rotation back to E */
+  93%, 95% {
+    opacity: 0.7;
+  }
+  /* Settle back to E state - visible */
+  96%, 100% {
+    opacity: 1;
   }
 }
 

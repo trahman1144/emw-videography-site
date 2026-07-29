@@ -99,7 +99,7 @@ ${formData.message}
         tabIndex={-1}
       >
         <div className="flex items-center justify-between mb-6">
-          <h2 id="modal-title" className="text-2xl font-bold text-emw-white">
+          <h2 id="modal-title" className="text-2xl font-semibold text-emw-white">
             Get a Quote
           </h2>
           <button

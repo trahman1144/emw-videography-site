@@ -24,7 +24,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       <div className="group rounded-2xl border border-white/10 bg-[color:rgba(0,0,0,0.25)] p-6 hover:border-[#0D4D37] transition">
         <div className="flex items-center space-x-3 mb-4">
           <IconBadge name={service.icon} />
-          <h3 className="text-xl font-bold text-emw-white">{service.title}</h3>
+          <h3 className="text-xl font-semibold text-emw-white">{service.title}</h3>
         </div>
         
         <p className="text-white/70 mb-4 leading-relaxed">

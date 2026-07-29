@@ -12,7 +12,7 @@ export default function ContactCard() {
   return (
     <div className="bg-emw-soft-green/10 border border-emw-soft-green/20 rounded-lg p-8">
       <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold text-emw-white mb-2">Get In Touch</h3>
+        <h3 className="text-2xl font-semibold text-emw-white mb-2">Get In Touch</h3>
         <p className="text-emw-white/80">
           Ready to bring your vision to life? Let&apos;s discuss your project.
         </p>

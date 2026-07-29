@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import EmwMonogram from './EmwMonogram'
+import EmwLogo from './EmwLogo'
 import MobileMenu from './MobileMenu'
 
 export default function Header() {
@@ -10,12 +10,12 @@ export default function Header() {
       <div className="mx-auto max-w-6xl h-14 px-4 flex items-center justify-between relative">
         {/* Left brand block */}
         <Link href="/" className="flex items-center gap-2">
-          <EmwMonogram />
+          <EmwLogo size={32} />
           <span className="sr-only">Euan Michael Wattley Videography</span>
         </Link>
 
         {/* Desktop nav - centered */}
-        <nav className="hidden md:flex items-center gap-6 text-base font-semibold absolute left-1/2 transform -translate-x-1/2">
+        <nav className="hidden md:flex items-center gap-6 text-base font-medium absolute left-1/2 transform -translate-x-1/2">
           <Link
             href="/"
             className="nav-link inline-flex items-center px-1 py-1 text-white/80 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(13,77,55,.4)] transition-transform hover:scale-[1.03]"

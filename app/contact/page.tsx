@@ -16,7 +16,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <Section className="min-h-[60vh] flex items-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-emw-white mb-6">
+          <h1 className="text-4xl lg:text-6xl font-semibold text-emw-white mb-6">
             Contact Us
           </h1>
           <p className="text-xl text-emw-soft-green mb-8">
@@ -34,7 +34,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-emw-white mb-8">
+              <h2 className="text-3xl font-semibold text-emw-white mb-8">
                 Get In Touch
               </h2>
               <div className="space-y-8">
@@ -43,7 +43,7 @@ export default function ContactPage() {
                     <IconBadge name="chat" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-emw-white mb-2">
+                    <h3 className="text-xl font-semibold text-emw-white mb-2">
                       Email Us
                     </h3>
                     <a
@@ -63,7 +63,7 @@ export default function ContactPage() {
                     <IconBadge name="chat" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-emw-white mb-2">
+                    <h3 className="text-xl font-semibold text-emw-white mb-2">
                       Call Us
                     </h3>
                     <a
@@ -83,7 +83,7 @@ export default function ContactPage() {
                     <IconBadge name="globe" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-emw-white mb-2">
+                    <h3 className="text-xl font-semibold text-emw-white mb-2">
                       Location
                     </h3>
                     <p className="text-white/70">
@@ -98,7 +98,7 @@ export default function ContactPage() {
                     <IconBadge name="calendar" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-emw-white mb-2">
+                    <h3 className="text-xl font-semibold text-emw-white mb-2">
                       Business Hours
                     </h3>
                     <p className="text-white/70">
@@ -122,7 +122,7 @@ export default function ContactPage() {
       <Section>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-4">
               Follow My Work
             </h2>
             <p className="text-emw-white/80 text-lg max-w-2xl mx-auto">
@@ -175,7 +175,7 @@ export default function ContactPage() {
                       <IconComponent className="w-5 h-5" />
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-emw-white mb-2">
+                  <h3 className="text-xl font-semibold text-emw-white mb-2">
                     {social.name}
                   </h3>
                   <p className="text-emw-deep-green font-medium mb-3">
@@ -195,7 +195,7 @@ export default function ContactPage() {
       <Section className="bg-emw-deep-green/20">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-emw-white/80 text-lg max-w-2xl mx-auto">
@@ -245,7 +245,7 @@ export default function ContactPage() {
       {/* CTA Section */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-6">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-6">
             Ready to Get Started?
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">

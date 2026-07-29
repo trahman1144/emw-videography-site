@@ -14,7 +14,7 @@ export default function TestimonialsPage() {
       {/* Hero Section */}
       <Section className="min-h-[60vh] flex items-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-emw-white mb-6">
+          <h1 className="text-4xl lg:text-6xl font-semibold text-emw-white mb-6">
             Client Testimonials
           </h1>
           <p className="text-xl text-emw-soft-green mb-8">
@@ -68,7 +68,7 @@ export default function TestimonialsPage() {
       <Section>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-4">
               More Client Stories
             </h2>
             <p className="text-emw-white/80 text-lg max-w-2xl mx-auto">
@@ -106,7 +106,7 @@ export default function TestimonialsPage() {
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-emw-deep-green rounded-full flex items-center justify-center text-emw-white text-xl font-bold">
+                    <div className="w-16 h-16 bg-emw-deep-green rounded-full flex items-center justify-center text-emw-white text-xl font-semibold">
                       {testimonial.name.split(' ').map(n => n[0]).join('')}
                     </div>
                   </div>
@@ -151,7 +151,7 @@ export default function TestimonialsPage() {
       <Section className="bg-emw-deep-green/20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-4">
               By the Numbers
             </h2>
             <p className="text-emw-white/80 text-lg max-w-2xl mx-auto">
@@ -173,7 +173,7 @@ export default function TestimonialsPage() {
                 <div className="flex justify-center mb-4">
                   <IconBadge name={stat.icon} />
                 </div>
-                <div className="text-4xl font-bold text-emw-deep-green mb-2">
+                <div className="text-4xl font-semibold text-emw-deep-green mb-2">
                   {stat.number}
                 </div>
                 <div className="text-white/70 font-medium">
@@ -188,7 +188,7 @@ export default function TestimonialsPage() {
       {/* CTA Section */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-6">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-6">
             Ready to Join My Happy Clients?
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">

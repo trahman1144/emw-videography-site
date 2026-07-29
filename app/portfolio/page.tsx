@@ -14,7 +14,7 @@ export default function PortfolioPage() {
       {/* Hero Section */}
       <Section className="min-h-[60vh] flex items-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-emw-white mb-6">
+          <h1 className="text-4xl lg:text-6xl font-semibold text-emw-white mb-6">
             My Portfolio
           </h1>
           <p className="text-xl text-emw-soft-green mb-8">
@@ -56,7 +56,7 @@ export default function PortfolioPage() {
           >
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-4">
+                <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-4">
                   {sectionTitle}
                 </h2>
                 <p className="text-emw-white/80 text-lg max-w-2xl mx-auto">
@@ -123,7 +123,7 @@ export default function PortfolioPage() {
       <Section className="bg-emw-deep-green/20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-4">
               My Process
             </h2>
             <p className="text-emw-white/80 text-lg max-w-2xl mx-auto">
@@ -165,10 +165,10 @@ export default function PortfolioPage() {
                 <div className="flex justify-center mb-4">
                   <IconBadge name={step.icon} />
                 </div>
-                <div className="text-emw-deep-green font-bold text-lg mb-2">
+                <div className="text-emw-deep-green font-semibold text-lg mb-2">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-bold text-emw-white mb-3">
+                <h3 className="text-xl font-semibold text-emw-white mb-3">
                   {step.title}
                 </h3>
                 <p className="text-white/70 text-sm">
@@ -183,7 +183,7 @@ export default function PortfolioPage() {
       {/* CTA Section */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-6">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-6">
             Ready to Create Your Story?
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">

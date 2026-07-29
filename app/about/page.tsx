@@ -14,7 +14,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Section className="min-h-[60vh] flex items-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-emw-white mb-6">
+          <h1 className="text-4xl lg:text-6xl font-semibold text-emw-white mb-6">
             About Euan Michael Wattley
           </h1>
           <p className="text-xl text-emw-soft-green mb-8">
@@ -28,7 +28,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-emw-white mb-6">
+              <h2 className="text-3xl font-semibold text-emw-white mb-6">
                 My Story
               </h2>
               <div className="space-y-4 text-emw-white/80 leading-relaxed">
@@ -52,7 +52,7 @@ export default function AboutPage() {
               <div className="flex justify-center mb-4">
                 <IconBadge name="clapper" />
               </div>
-              <h3 className="text-2xl font-bold text-emw-white mb-4">
+              <h3 className="text-2xl font-semibold text-emw-white mb-4">
                 Professional Experience
               </h3>
               <div className="space-y-3 text-emw-white/80">
@@ -82,7 +82,7 @@ export default function AboutPage() {
       <Section>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-4">
               Expertise & Skills
             </h2>
             <p className="text-emw-white/80 text-lg max-w-2xl mx-auto">
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 <div className="flex justify-center mb-4">
                   <IconBadge name={skill.icon} />
                 </div>
-                <h3 className="text-xl font-bold text-emw-white mb-3">
+                <h3 className="text-xl font-semibold text-emw-white mb-3">
                   {skill.title}
                 </h3>
                 <p className="text-white/70">
@@ -145,7 +145,7 @@ export default function AboutPage() {
       {/* Philosophy Section */}
       <Section className="bg-emw-deep-green/20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-8">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-8">
             My Philosophy
           </h2>
           <blockquote className="text-xl lg:text-2xl text-emw-white/90 italic leading-relaxed mb-8">
@@ -160,7 +160,7 @@ export default function AboutPage() {
       {/* CTA Section */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-6">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-6">
             {"Let's Work Together"}
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">

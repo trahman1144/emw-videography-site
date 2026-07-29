@@ -30,7 +30,7 @@ export default function Logo() {
           return (
             <span
               key={`logo-${letter}-${index}`}
-              className={`text-2xl font-bold transition-opacity duration-500 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${
+              className={`text-2xl font-semibold transition-opacity duration-500 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${
                 isActive ? 'opacity-100' : 'opacity-0'
               }`}
               style={{

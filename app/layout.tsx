@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from 'next'
-import { Montserrat } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MobileNav from '@/components/MobileNav'
 
-const montserrat = Montserrat({ 
+const inter = Inter({ 
   subsets: ['latin'],
-  variable: '--font-montserrat',
+  variable: '--font-inter',
+  weight: ['300', '400', '500', '600'],
 })
 
 export const metadata: Metadata = {
@@ -35,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={montserrat.variable}>
-      <body className="font-montserrat">
+    <html lang="en" className={inter.variable}>
+      <body className="font-inter">
         <Header />
         <main className="pt-14 pb-mobile-nav">
           {children}

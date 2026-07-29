@@ -14,7 +14,7 @@ export default function ConsultationPage() {
       {/* Hero Section */}
       <Section className="min-h-[60vh] flex items-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-emw-white mb-6">
+          <h1 className="text-4xl lg:text-6xl font-semibold text-emw-white mb-6">
             Book a Consultation
           </h1>
           <p className="text-xl text-emw-soft-green mb-8">
@@ -31,7 +31,7 @@ export default function ConsultationPage() {
       <Section className="bg-emw-soft-green/5">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-4">
               Get Started Today
             </h2>
             <p className="text-emw-white/80 text-lg max-w-2xl mx-auto">
@@ -49,7 +49,7 @@ export default function ConsultationPage() {
       <Section>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-4">
               What to Expect
             </h2>
             <p className="text-emw-white/80 text-lg max-w-2xl mx-auto">
@@ -103,11 +103,11 @@ export default function ConsultationPage() {
                 <div className="flex justify-center mb-4">
                   <IconBadge name={step.icon} />
                 </div>
-                <div className="text-emw-deep-green font-bold text-lg mb-2">
+                <div className="text-emw-deep-green font-semibold text-lg mb-2">
                   {step.step}
                 </div>
                 <span className="sr-only">{step.title}</span>
-                <h3 className="text-xl font-bold text-emw-white mb-3">
+                <h3 className="text-xl font-semibold text-emw-white mb-3">
                   {step.title}
                 </h3>
                 <p className="text-white/70 text-sm leading-relaxed">
@@ -123,7 +123,7 @@ export default function ConsultationPage() {
       <Section className="bg-emw-deep-green/20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-4">
               Why Book a Consultation?
             </h2>
             <p className="text-emw-white/80 text-lg max-w-2xl mx-auto">
@@ -160,7 +160,7 @@ export default function ConsultationPage() {
                     <IconBadge name={benefit.icon} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-emw-white mb-2">
+                    <h3 className="text-xl font-semibold text-emw-white mb-2">
                       {benefit.title}
                     </h3>
                     <p className="text-white/70">
@@ -171,7 +171,7 @@ export default function ConsultationPage() {
               ))}
             </div>
             <div className="bg-emw-soft-green/10 border border-emw-soft-green/20 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-emw-white mb-6">
+              <h3 className="text-2xl font-semibold text-emw-white mb-6">
                 Consultation Details
               </h3>
               <div className="space-y-4">
@@ -200,7 +200,7 @@ export default function ConsultationPage() {
       {/* CTA Section */}
       <Section>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl font-bold text-emw-white mb-6">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-emw-white mb-6">
             Ready to Get Started?
           </h2>
           <p className="text-lg text-emw-white/80 mb-8">
