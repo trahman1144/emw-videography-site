@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+/* Fonts are loaded via next/font in layout.tsx (Plus Jakarta Sans + JetBrains Mono) */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,7 +33,7 @@ body {
 
 @layer base {
   html {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 400;
   }
   
@@ -43,7 +43,8 @@ body {
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 700;
   }
   
   * {
@@ -52,6 +53,7 @@ body {
 }
 
 @layer components {
+  /* ── Legacy buttons (kept for other pages) ── */
   .btn-primary {
     @apply bg-emw-deep-green hover:bg-emw-soft-green text-emw-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emw-soft-green focus:ring-offset-2 focus:ring-offset-emw-black;
   }
@@ -60,6 +62,50 @@ body {
     @apply border-2 border-emw-deep-green text-emw-deep-green hover:bg-emw-deep-green hover:text-emw-white px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emw-soft-green focus:ring-offset-2 focus:ring-offset-emw-black;
   }
   
+  /* ── Editorial CTA buttons (homepage) ── */
+  .btn-primary-editorial {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #0D4D37;
+    color: #fff;
+    padding: 14px 32px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    border: 1px solid transparent;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn-primary-editorial:hover {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary-editorial {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 14px 32px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn-secondary-editorial:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* ── Section utilities ── */
   .section-padding {
     @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
   }
@@ -80,8 +126,70 @@ body {
   .form-control {
     @apply w-full px-4 py-3 bg-emw-black border border-white/20 rounded-xl text-emw-white placeholder-emw-white/50 font-medium text-[15px] focus:outline-none focus:border-white/40 focus:ring-4 focus:ring-emw-deep-green/35 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200;
   }
-  
-  /* Hero Background Video Styles */
+
+  /* ── Scroll reveal ── */
+  .reveal-base {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* ── Project row (featured work) ── */
+  .project-row {
+    transition: background 0.3s ease;
+    cursor: pointer;
+  }
+
+  .project-row:hover {
+    background: rgba(255, 255, 255, 0.018);
+  }
+
+  /* ── Service accordion ── */
+  .service-accordion-row {
+    transition: background 0.25s ease;
+  }
+
+  .service-accordion-row:hover {
+    background: rgba(255, 255, 255, 0.015);
+  }
+
+  .service-accordion-panel {
+    transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  }
+
+  .service-accordion-panel[style*="max-height: 0"] {
+    opacity: 0;
+  }
+
+  .service-accordion-panel:not([style*="max-height: 0"]) {
+    opacity: 1;
+  }
+
+  /* ── Lightbox ── */
+  .lightbox-overlay {
+    animation: lightboxFadeIn 0.25s ease forwards;
+  }
+
+  @keyframes lightboxFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .lightbox-content {
+    animation: lightboxSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes lightboxSlideUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* ── Hero Background Video Styles ── */
   .hero-section {
     position: relative;
     isolation: isolate;
@@ -192,6 +300,12 @@ body {
     
     .hero-fallback {
       z-index: 1;
+    }
+
+    .reveal-base {
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
   }
 }
@@ -312,45 +426,25 @@ body {
 
 @keyframes emwLogoDotPulse {
   /* E state - visible */
-  0%, 25% {
-    opacity: 1;
-  }
-  /* Fade out before rotation to M (in sync with logo pulse) */
-  26%, 28% {
-    opacity: 0.3;
-  }
+  0%, 25% { opacity: 1; }
+  /* Fade out before rotation to M */
+  26%, 28% { opacity: 0.3; }
   /* Fade in during rotation to M */
-  29%, 31% {
-    opacity: 0.7;
-  }
+  29%, 31% { opacity: 0.7; }
   /* M state - visible */
-  32%, 57% {
-    opacity: 1;
-  }
-  /* Fade out before rotation to W (in sync with logo pulse) */
-  58%, 60% {
-    opacity: 0.3;
-  }
+  32%, 57% { opacity: 1; }
+  /* Fade out before rotation to W */
+  58%, 60% { opacity: 0.3; }
   /* Fade in during rotation to W */
-  61%, 63% {
-    opacity: 0.7;
-  }
+  61%, 63% { opacity: 0.7; }
   /* W state - visible */
-  64%, 89% {
-    opacity: 1;
-  }
-  /* Fade out before rotation back to E (in sync with logo pulse) */
-  90%, 92% {
-    opacity: 0.3;
-  }
+  64%, 89% { opacity: 1; }
+  /* Fade out before rotation back to E */
+  90%, 92% { opacity: 0.3; }
   /* Fade in during rotation back to E */
-  93%, 95% {
-    opacity: 0.7;
-  }
-  /* Settle back to E state - visible */
-  96%, 100% {
-    opacity: 1;
-  }
+  93%, 95% { opacity: 0.7; }
+  /* Settle back to E state */
+  96%, 100% { opacity: 1; }
 }
 
 /* Details/Summary mobile menu styling */
@@ -412,25 +506,13 @@ details[open] .details-panel {
 
 /* Mobile menu animations */
 @keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .menu-item {
@@ -457,14 +539,8 @@ details[open] .details-panel {
 
 /* Drawer menu styles and animations */
 @keyframes fadeRise {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .drawer-overlay {

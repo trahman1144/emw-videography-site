@@ -1,26 +1,38 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MobileNav from '@/components/MobileNav'
 
-const inter = Inter({ 
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['300', '400', '500', '600'],
+  variable: '--font-jakarta',
+  weight: ['300', '400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono-code',
+  weight: ['300', '400', '500'],
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
   title: 'Euan Michael Wattley Videography | Voir le Monde',
-  description: 'Professional videography services for weddings, corporate events, music videos, and more. Cinematic storytelling that captures your vision.',
-  keywords: 'videography, wedding videographer, corporate video, music video, drone footage, video editing',
+  description:
+    'Professional videography services for weddings, corporate events, music videos, and more. Cinematic storytelling that captures your vision.',
+  keywords:
+    'videography, wedding videographer, corporate video, music video, drone footage, video editing, London',
   authors: [{ name: 'Euan Michael Wattley' }],
   openGraph: {
     title: 'Euan Michael Wattley Videography',
-    description: 'Professional videography services for weddings, corporate events, music videos, and more.',
+    description:
+      'Professional videography services for weddings, corporate events, music videos, and more.',
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_GB',
   },
 }
 
@@ -36,8 +48,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="font-inter">
+    <html lang="en" className={`${jakarta.variable} ${jetbrainsMono.variable}`}>
+      <body className="font-jakarta">
         <Header />
         <main className="pt-14 pb-mobile-nav">
           {children}
