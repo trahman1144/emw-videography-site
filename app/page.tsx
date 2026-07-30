@@ -140,18 +140,37 @@ export default function HomePage() {
   const [openService, setOpenService] = useState<string | null>(null)
   const [imgErrors, setImgErrors] = useState<Record<string, boolean>>({})
 
-  // ── Hero video (unchanged) ──────────────────────────────────────────────────
+  // ── Hero video (mobile autoplay & inline play optimization) ───────────────
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
 
+    video.muted = true
+    video.setAttribute('playsinline', 'true')
+    video.setAttribute('webkit-playsinline', 'true')
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    const playVideo = () => {
+      video.muted = true
+      const promise = video.play()
+      if (promise !== undefined) {
+        promise.catch(() => {
+          // If mobile autoplay policy blocks initial play, play on first user interaction
+          const handleInteraction = () => {
+            video.play().catch(() => {})
+          }
+          window.addEventListener('touchstart', handleInteraction, { once: true })
+          window.addEventListener('click', handleInteraction, { once: true })
+        })
+      }
+    }
 
     if (prefersReducedMotion) {
       video.pause()
       video.style.display = 'none'
     } else {
-      video.play().catch(() => {})
+      playVideo()
     }
 
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -161,7 +180,7 @@ export default function HomePage() {
         video.style.display = 'none'
       } else {
         video.style.display = 'block'
-        video.play().catch(() => {})
+        playVideo()
       }
     }
 
@@ -244,14 +263,6 @@ export default function HomePage() {
               {BRAND.tagline}
             </span>
           </div>
-
-          {/* Wordmark */}
-          <h1 className="font-jakarta font-extrabold text-[clamp(3rem,10vw,7.5rem)] text-white leading-[0.9] tracking-tighter mb-8 animate-slide-up">
-            <span className="text-emw-deep-green">E</span>uan{' '}
-            <span className="text-emw-deep-green">M</span>ichael
-            <br />
-            <span className="text-emw-deep-green">W</span>attley
-          </h1>
 
           {/* Sub-copy */}
           <p className="font-jakarta text-base md:text-lg text-white/50 mb-14 max-w-sm mx-auto leading-relaxed font-light tracking-wide animate-slide-up">
